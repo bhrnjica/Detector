@@ -20,7 +20,7 @@ The image below show the Workflow and the implementation of the solution:
 
 ![Img01](img/img01.png)
 
-Blazor App is simple application containing of two pages:
+Blazor App is simple application consists of two pages:
     - About
     - Detector (index) page 
 
