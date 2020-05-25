@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Nokia3310.Detector.Solution
+/Nokia3310.Detector.App/bin/x64/Debug/netcoreapp3.1
+/Nokia3310.Detector.App/obj
+/Nokia3310.ModelTrainer/bin/x64/Debug/netcoreapp3.1
+/Nokia3310.ModelTrainer/obj
+/Nokia3310.Shared/bin/x64/Debug/netstandard2.0
+/Nokia3310.Shared/obj
