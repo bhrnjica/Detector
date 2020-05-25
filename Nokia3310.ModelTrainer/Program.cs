@@ -39,7 +39,6 @@ namespace Nokia3310.ModelTrainer
                 //Feature and Label name
                 FeatureColumnName = "Image",
                 LabelColumnName = "LabelAsKey",
-                ValidationSet=null,
                 // Just by changing/selecting InceptionV3/MobilenetV2/ResnetV250  
                 // you can try a different DNN architecture (TensorFlow pre-trained model). 
                 Arch = ImageClassificationTrainer.Architecture.InceptionV3,

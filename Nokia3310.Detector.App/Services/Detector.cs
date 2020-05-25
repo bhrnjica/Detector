@@ -37,7 +37,7 @@ namespace Nokia3310Detector.Services
 
                 var prediction = await Task.Run(()=> mlEngine.Predict(imageToPredict));
 
-                return prediction.PredictedLabel=="3310"? true: false;
+                return prediction.PredictedLabel=="3310";
             }
             catch (Exception ex)
             {
