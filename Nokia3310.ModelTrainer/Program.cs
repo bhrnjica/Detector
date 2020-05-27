@@ -23,17 +23,17 @@ namespace Nokia3310.ModelTrainer
 
             //begin building model process
             var mlContext = new MLContext(seed: 20200525);
-            //we need to crate logger of ML.NET context in order to know what is heppening in it.
+            //we need to crate logger of ML.NET context in order to know what is happening in it.
             mlContext.Log += MlContext_Log;
 
-
+            //start building the ML model
             ModelBuilder model = new ModelBuilder(mlContext, fullPath);
-
+            //load image set
             var imageSet = LoadImageSet(fullPath+"/train");
 
 
             //
-            //Definition of the hype-parameters
+            //Definition of the hyper-parameters
             var opt = new ImageClassificationTrainer.Options()
             {
                 //Feature and Label name
@@ -60,7 +60,7 @@ namespace Nokia3310.ModelTrainer
 
                 },
             };
-            //
+            //start training 
             model.BuildAndTrain(imageSet, opt); 
         }
 

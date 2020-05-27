@@ -9,3 +9,5 @@
 /Nokia3310.ModelTrainer/obj
 /Nokia3310.Shared/bin/x64/Debug/netstandard2.0
 /Nokia3310.Shared/obj
+/Nokia3310.ModelTrainer/image_set/NokiaDetectorModel-v637262023255522556.zip
+/Nokia3310.Detector.App/image
