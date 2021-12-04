@@ -11,3 +11,10 @@
 /Nokia3310.Shared/obj
 /Nokia3310.ModelTrainer/image_set/NokiaDetectorModel-v637262023255522556.zip
 /Nokia3310.Detector.App/image
+.vs/
+/Nokia3310.Detector.App/bin/
+/Nokia3310.Detector.App/obj/
+/Nokia3310.ModelTrainer/bin/
+/Nokia3310.ModelTrainer/obj/
+/Nokia3310.Shared/bin/
+/Nokia3310.Shared/obj/
