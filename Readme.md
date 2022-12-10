@@ -1,6 +1,6 @@
 ﻿# Detector
 
-`Detector` is .net application that shows how to use different type of .NET components e.g. `ML.NET`, `Blazor`, `Shared Class Library` and `Web.API`.
+`Detector` is .net application that demonstrates how to use different type of `dotnet` components (e.g. `ML.NET`, `Blazor`, `Shared Class Library` and `Web.API`).
 
 
  The high-level architecture diagram of the application is shown on the following image:
@@ -54,11 +54,6 @@ Web API `Detector` is based on the latest design pattern for building Web API ba
  - middleware, mapping and routing in Web APi,
  - Mediator pattern and CQRS implementation in Web API,
  - Unit and intergation tests
-
-
-
-
-
 
 # Machine Learning Part
 
