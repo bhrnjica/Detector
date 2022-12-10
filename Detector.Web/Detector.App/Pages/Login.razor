@@ -1,0 +1,40 @@
+﻿@page "/login"
+@using Detector.App;
+@using System.ComponentModel.DataAnnotations;
+@using Detector.App.Services;
+@inject DetectorClient Client
+
+@if (!string.IsNullOrEmpty(CurrentUser))
+{
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            Logged in as <strong>@CurrentUser</strong>
+            <a class="btn btn-primary" role="button" @onclick="@Logout">Logout</a>
+        </li>
+    </ul>
+
+    <TodoList OnForbidden="@Logout" />
+}
+else
+{
+    <LogInForm OnLoggedIn="@HandleLogin" />
+}
+
+@code {
+    
+    [Parameter] 
+    public string? CurrentUser { get; set; }
+
+    void HandleLogin(string newUsername)
+    {
+        CurrentUser = newUsername;
+    }
+
+    async Task Logout()
+    {
+        if (await Client.LogoutAsync())
+        {
+            CurrentUser = null;
+        }
+    }
+}

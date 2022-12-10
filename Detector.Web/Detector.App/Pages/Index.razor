@@ -1,0 +1,75 @@
+﻿@page "/"
+@using Detector.Services
+@inject IFileUpload fileUpload
+@inject IDetector detector
+<h1>Nokia 331 Detector!</h1>
+
+<BlazorInputFile.InputFile OnChange="HandleFileSelect"></BlazorInputFile.InputFile>
+<br />
+
+@if (file != null)
+    {
+        var fileName = $"/StaticFiles/{file.Name}";
+        <img src="@fileName" asp-append-version="true"  width="300px" />
+    }
+    else
+    {
+        <img src="/StaticFiles/image_not_availabel.jpg" asp-append-version="true" width="300px" />
+    }
+
+
+<br />
+<button class="btn btn-primary" name="btnPredict" disabled="@isDetecting" @onclick="Detect"> Detection</button>
+
+<p style="@colorResult"> @resultDetection </p>
+
+
+
+
+@code   {
+
+    string resultDetection="No detection is performed.";
+    string colorResult="color:black;";
+    bool isDetecting = false;
+    IFileListEntry file;
+    async Task HandleFileSelect(IFileListEntry[] files)
+    {
+        if (files.FirstOrDefault() != null)
+        {
+            await fileUpload.UploadAsync(files.FirstOrDefault());
+            file = files.FirstOrDefault();
+        }
+    }
+
+    async Task Detect()
+    {
+        try
+        {
+
+            if (file != null)
+            {
+                var fileName = file.Name;
+                isDetecting= true;
+                var retVal = await detector.DetectAsync(fileName);
+                if(retVal)
+                {
+                    resultDetection="The awsome Nokia3310 has been detected on the image.";
+                    colorResult = "color:blue;";
+                }
+                else
+                {
+                    resultDetection="Nokia3310 has not been detected on the image.";
+                    colorResult="color:red;";
+                }
+
+                isDetecting= false;
+            }
+        }
+        catch(Exception ex)
+        {
+            isDetecting= false;
+        }
+
+    }
+}
+
