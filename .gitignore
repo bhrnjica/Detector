@@ -18,3 +18,17 @@
 /Nokia3310.ModelTrainer/obj/
 /Nokia3310.Shared/bin/
 /Nokia3310.Shared/obj/
+/.db
+/Detector.Api.Old/bin/Debug/net7.0
+/Detector.Api.Old/obj
+/Detector.ML/Nokia3310.ModelTrainer/bin/x64/Debug/net7.0
+/Detector.ML/Nokia3310.ModelTrainer/obj
+/Detector.Test/bin/Debug/net7.0
+/Detector.Test/obj
+/Detector.Web/Detector.App/bin/x64/Debug/net7.0
+/Detector.Web/Detector.App/obj
+/Detector.Web/Detector.Contract/bin/Debug/net7.0
+/Detector.Web/Detector.Contract/obj
+/Detector.Web/Detector.Shared/obj
+/Detector.WebApi/bin/Debug/net7.0
+/Detector.WebApi/obj
