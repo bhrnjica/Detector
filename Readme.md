@@ -12,19 +12,19 @@
 ```mermaid
   graph TD;
       A(Detector) --> B(Machine Learning)
-      style A stroke:#111,stroke-width:4px;
-      style B fill:#99F,stroke:#111,stroke-width:4px;
+      style A stroke:#111,stroke-width:2px;
+      style B fill:#99F,stroke:#111,stroke-width:2px;
       
       A-->C(Blazor Client App);
-      style C fill:#f50,stroke:#111,stroke-width:4px;
+      style C fill:#f50,stroke:#111,stroke-width:2px;
 
       A-->F(Shared Library);
-      style F fill:#f099,stroke:#111,stroke-width:4px;
+      style F fill:#f099,stroke:#111,stroke-width:2px;
 
       F-->FE(EF Model, DTO,... )
 
       A-->D(Web API);
-      style D fill:	#f96,stroke:#111,stroke-width:4px;
+      style D fill:	#f96,stroke:#111,stroke-width:2px;
 
       B-->E(ML.NET);
       E-->EE(Tensorflow.NET);
