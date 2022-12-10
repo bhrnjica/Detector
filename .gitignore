@@ -3,13 +3,13 @@
 ################################################################################
 
 /.vs/Nokia3310.Detector.Solution
-/Nokia3310.Detector.App/bin/x64/Debug/netcoreapp3.1
+/Nokia3310.Detector.App/bin/
 /Nokia3310.Detector.App/obj
-/Nokia3310.ModelTrainer/bin/x64/Debug/netcoreapp3.1
+/Nokia3310.ModelTrainer/bin/
 /Nokia3310.ModelTrainer/obj
-/Nokia3310.Shared/bin/x64/Debug/netstandard2.0
+/Nokia3310.Shared/bin/x64/
 /Nokia3310.Shared/obj
-/Nokia3310.ModelTrainer/image_set/NokiaDetectorModel-v637262023255522556.zip
+/Nokia3310.ModelTrainer/image_set/
 /Nokia3310.Detector.App/image
 .vs/
 /Nokia3310.Detector.App/bin/
@@ -18,3 +18,17 @@
 /Nokia3310.ModelTrainer/obj/
 /Nokia3310.Shared/bin/
 /Nokia3310.Shared/obj/
+/.db
+/Detector.Api.Old/bin/Debug/net7.0
+/Detector.Api.Old/obj
+/Detector.ML/Nokia3310.ModelTrainer/bin/
+/Detector.ML/Nokia3310.ModelTrainer/obj/
+/Detector.Test/bin/
+/Detector.Test/obj/
+/Detector.Web/Detector.App/bin/
+/Detector.Web/Detector.App/obj/
+/Detector.Web/Detector.Contract/bin/
+/Detector.Web/Detector.Contract/obj/
+/Detector.Web/Detector.Shared/obj
+/Detector.WebApi/bin/Debug/
+/Detector.WebApi/obj/
