@@ -75,7 +75,7 @@ public class UserApiTests
 
         Assert.NotNull(token);
 
-        // Check the token is valid
+        // Check if token is valid
 
         var req = new HttpRequestMessage(HttpMethod.Get, "/detectors");
         req.Headers.Authorization = new("Bearer", token.Token);
