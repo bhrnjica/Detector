@@ -8,57 +8,18 @@ namespace Detector.Test.Integration;
 
 public class DetectorTests
 {
-    DetectorData createDetector()
-    {
-        return new DetectorData
-        {
-            Name = "Detector01",
-            Version = 1,
-            DetectorDetails = new DetectorDetails
-            {
-                Notes = "Nokia3310"
-            }
-        };
-
-    }
-
-    DetectorItem createDetectorItem()
-    {
-        return new DetectorItem
-        {
-            Id = 1,
-            Name = "Detector01",
-            Version = 1,
-            Notes = "Nokia3310"
-        };
-
-    }
-
-    DetectorCreateRequest createDetectorRequest()
-    {
-        return new DetectorCreateRequest
-        {
-            Name = "Detector01",
-            Version = 1,
-            Notes = "Nokia3310"
-        };
-
-    }
-
     [Fact]
     public async Task Detector_GetAll_With_Proper_Authentication()
     {
-        var userId = "34";
-
         await using var application = new DetectorApp();
         await using var db = application.CreateDetectorContext();
 
-        await application.CreateUserAsync(userId);
+        await application.CreateUserAsync();
 
         db.DetectorData.Add(createDetector());
         await db.SaveChangesAsync();
 
-        var client = application.CreateClient(userId);
+        var client = application.CreateClient();
         var detectors = await client.GetFromJsonAsync<List<DetectorItem>>("/detectors");
         Assert.NotNull(detectors);
 
@@ -69,12 +30,10 @@ public class DetectorTests
     [Fact]
     public async Task Detector_GetAll_WithoutAuthorization()
     {
-        var userId = "34";
-
         await using var application = new DetectorApp();
         await using var db = application.CreateDetectorContext();
 
-        var client = application.CreateClient(userId);
+        var client = application.CreateClient();
         var response = await client.GetAsync("/detectors");
 
         Assert.Equal(HttpStatusCode.Forbidden, response.StatusCode);
@@ -82,15 +41,14 @@ public class DetectorTests
     [Fact]
     public async Task Detector_Put()
     {
-        var userId = "34";
         await using var application = new DetectorApp();
         await using var db = application.CreateDetectorContext();
-        await application.CreateUserAsync(userId);
+        await application.CreateUserAsync();
 
         db.DetectorData.Add(createDetector());
         var entity = await db.SaveChangesAsync();
 
-        var client = application.CreateClient(userId);
+        var client = application.CreateClient();
         var detectors = await client.GetFromJsonAsync<List<DetectorItem>>("/detectors");
         Assert.NotNull(detectors);
 
@@ -118,12 +76,12 @@ public class DetectorTests
     [Fact]
     public async Task Detector_Post()
     {
-        var userId = "34";
+
         await using var application = new DetectorApp();
         await using var db = application.CreateDetectorContext();
-        await application.CreateUserAsync(userId);
+        await application.CreateUserAsync();
 
-        var client = application.CreateClient(userId);
+        var client = application.CreateClient();
         var detectoritem = createDetectorRequest();
 
 
@@ -141,18 +99,16 @@ public class DetectorTests
     [Fact]
     public async Task Detector_Delete()
     {
-        var userId = "34";
-
         await using var application = new DetectorApp();
         await using var db = application.CreateDetectorContext();
 
-        await application.CreateUserAsync(userId);
+        await application.CreateUserAsync();
 
         db.DetectorData.Add(createDetector());
 
         await db.SaveChangesAsync();
 
-        var client = application.CreateClient(userId);
+        var client = application.CreateClient();
 
         var detector = db.DetectorData.FirstOrDefault();
         Assert.NotNull(detector);
@@ -165,5 +121,32 @@ public class DetectorTests
 
         detector = db.DetectorData.FirstOrDefault();
         Assert.Null(detector);
+    }
+
+
+    DetectorData createDetector()
+    {
+        return new DetectorData
+        {
+            Name = "Detector01",
+            Version = 1,
+            DetectorDetails = new DetectorDetails
+            {
+                Notes = "Nokia3310"
+            }
+        };
+
+    }
+
+
+    DetectorCreateRequest createDetectorRequest()
+    {
+        return new DetectorCreateRequest
+        {
+            Name = "Detector01",
+            Version = 1,
+            Notes = "Nokia3310"
+        };
+
     }
 }

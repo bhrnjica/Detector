@@ -27,7 +27,7 @@ internal class DetectorApp : WebApplicationFactory<Program>
         return db;
     }
 
-    public async Task CreateUserAsync(string username, string? password = null)
+    public async Task CreateUserAsync(string username= "userid", string? password = null)
     {
         using var scope = Services.CreateScope();
         var userManager = scope.ServiceProvider.GetRequiredService<UserManager<DetectorUser>>();
@@ -36,7 +36,7 @@ internal class DetectorApp : WebApplicationFactory<Program>
         Assert.True(result.Succeeded);
     }
 
-    public HttpClient CreateClient(string id, bool isAdmin = false)
+    public HttpClient CreateClient(string id= "userid", bool isAdmin = false)
     {
         return CreateDefaultClient(new AuthHandler(req =>
         {
