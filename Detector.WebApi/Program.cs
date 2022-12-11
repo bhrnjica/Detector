@@ -45,8 +45,6 @@ builder.Services.AddScoped<IDetectorRepository, DetectorRepository>();
 //Add mediator middware
 builder.Services.AddMediatR(x=> x.AsScoped(), typeof(Program));
 
-// Configure OpenTelemetry
-//builder.AddOpenTelemetry();
 
 var app = builder.Build();
 
