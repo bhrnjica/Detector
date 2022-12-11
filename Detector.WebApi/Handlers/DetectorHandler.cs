@@ -20,7 +20,7 @@ public class DetectorHandler : IRequestHandler<DetectorByIdRequest, IResult>
        
         var retVal =  await _repository.FindByIdAsync(request.Id);
 
-        return Results.Ok( retVal );
+        return retVal != null ? TypedResults.Ok(retVal) : TypedResults.NotFound();
     }
 
 
