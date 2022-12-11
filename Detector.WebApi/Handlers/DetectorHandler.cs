@@ -6,7 +6,7 @@ using System.Reflection.Metadata;
 
 namespace Detector.WebApi.Handlers;
 
-public class DetectorHandler : IRequestHandler<DetectorByNameRequest, IResult>
+public class DetectorHandler : IRequestHandler<DetectorByIdRequest, IResult>
 {
 
     private readonly IDetectorRepository _repository;
@@ -15,10 +15,10 @@ public class DetectorHandler : IRequestHandler<DetectorByNameRequest, IResult>
         _repository = repository;
     }
 
-    public async Task<IResult> Handle(DetectorByNameRequest request, CancellationToken cancellationToken)
+    public async Task<IResult> Handle(DetectorByIdRequest request, CancellationToken cancellationToken)
     {
        
-        var retVal =  await _repository.FindByNameAsync(request.Name);
+        var retVal =  await _repository.FindByIdAsync(request.Id);
 
         return Results.Ok( retVal );
     }
