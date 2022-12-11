@@ -3,7 +3,7 @@
 `Detector` is .net application that demonstrates how to use different type of `dotnet` components (e.g. `ML.NET`, `Blazor`, `Shared Class Library` and `Web.API`).
 
 
- The high-level schematic view of the application is shown on the image below:
+ The high-level schematic view of the application, components and features is shown on the image below:
 
 
 ```mermaid
