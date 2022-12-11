@@ -33,7 +33,7 @@ public static class DetectorService
 
         });
 
-        group.MapGet("/{Id}", async (IMediator mediator, [AsParameters] DetectorByNameRequest request) =>
+        group.MapGet("/{Id}", async (IMediator mediator, [AsParameters] DetectorByIdRequest request) =>
         {
             return await mediator.Send(request); ;
         });

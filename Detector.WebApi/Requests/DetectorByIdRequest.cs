@@ -2,9 +2,9 @@
 
 namespace Detector.WebApi.Requests
 {
-    public class DetectorUpdateRequest: DetectorCreateRequest
+    public class DetectorByIdRequest: IDetectorRequest<IResult>
     {
         public int Id { get; set; }
-      
+
     }
 }

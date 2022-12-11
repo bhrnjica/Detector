@@ -3,16 +3,13 @@
 `Detector` is .net application that demonstrates how to use different type of `dotnet` components (e.g. `ML.NET`, `Blazor`, `Shared Class Library` and `Web.API`).
 
 
- The high-level architecture diagram of the application is shown on the following image:
-
-
-
+ The high-level schematic view of the application, components and features is shown on the image below:
 
 
 ```mermaid
   graph TD;
       A(Detector) --> B(Machine Learning)
-      style A stroke:#111,stroke-width:2px;
+      style A stroke:#255,stroke-width:2px;
       style B fill:#99F,stroke:#111,stroke-width:2px;
       
       A-->C(Blazor Client App);
@@ -21,6 +18,9 @@
       A-->F(Shared Library);
       style F fill:#f099,stroke:#111,stroke-width:2px;
 
+      F-->B
+      F-->C
+      F-->D
       F-->FE(EF Model, DTO,... )
 
       A-->D(Web API);
@@ -39,6 +39,7 @@
       DB-->DBC(Integration test)
      
 ```
+
 # Shared Library
 
 The component shares the common code across all components:
